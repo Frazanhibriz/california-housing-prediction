@@ -1,58 +1,68 @@
 # 🏡 California Housing Price Prediction
 
-## 📖 Deskripsi Project
-Project ini bertujuan untuk memprediksi **harga median rumah** di California berdasarkan berbagai faktor sosial, demografi, dan geografis.  
-Dataset yang digunakan adalah **California Housing Dataset** dari `scikit-learn`.
-
-## 📊 Deskripsi Dataset
-| Kolom       | Deskripsi                                                                 |
-|-------------|---------------------------------------------------------------------------|
-| MedInc      | Median income rumah tangga (dalam puluhan ribu dolar AS)                  |
-| HouseAge    | Usia median rumah di area (tahun)                                         |
-| AveRooms    | Rata-rata jumlah ruangan per rumah                                        |
-| AveBedrms   | Rata-rata jumlah kamar tidur per rumah                                    |
-| Population  | Jumlah penduduk di area                                                   |
-| AveOccup    | Rata-rata jumlah penghuni per rumah                                       |
-| Latitude    | Lintang geografis area di California                                      |
-| Longitude   | Bujur geografis area di California                                        |
-| MedHouseVal | Harga median rumah (dalam ratusan ribu dolar AS) → **Target Prediksi**    |
+## 📖 Project Overview
+This project aims to predict the **median house value** in California based on socio-economic, demographic, and geographic factors.  
+The dataset used is the **California Housing Dataset** provided by `scikit-learn`.
 
 ---
 
-## 🧑‍💻 Metodologi
-1. **Exploratory Data Analysis (EDA)**
-   - Analisis distribusi data
-   - Heatmap korelasi antar fitur
-2. **Preprocessing**
-   - Train-test split
-   - Standarisasi (opsional)
-3. **Modeling**
-   - Linear Regression (baseline)
-   - Random Forest Regressor
-4. **Evaluasi**
-   - R² Score
-   - Root Mean Squared Error (RMSE)
-5. **Visualisasi**
-   - Korelasi antar fitur
-   - Feature Importance
-   - Scatter plot (Actual vs Predicted)
+## 📊 Dataset Description
+| Column       | Description                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| MedInc       | Median income of households (in tens of thousands of US dollars)            |
+| HouseAge     | Median age of houses in the area (years)                                    |
+| AveRooms     | Average number of rooms per house                                           |
+| AveBedrms    | Average number of bedrooms per house                                        |
+| Population   | Total population of the area                                                |
+| AveOccup     | Average number of occupants per household                                   |
+| Latitude     | Latitude of the area                                                        |
+| Longitude    | Longitude of the area                                                       |
+| MedHouseVal  | Median house value (in hundreds of thousands of US dollars) → **Target**    |
 
 ---
 
-## 📈 Hasil Evaluasi
+## 🛠️ Workflow
+1. **Data Loading**
+   - Load the dataset from `scikit-learn` into a pandas DataFrame.
+   
+2. **Exploratory Data Analysis (EDA)**
+   - Descriptive statistics and distribution analysis
+   - Correlation heatmap between features
+
+3. **Data Preprocessing**
+   - Splitting data into training and testing sets
+   - Feature scaling (optional)
+
+4. **Modeling**
+   - **Linear Regression** → used as the baseline model
+   - **Random Forest Regressor** → ensemble method to capture non-linear relationships
+
+5. **Model Evaluation**
+   - Metrics: R² Score, Root Mean Squared Error (RMSE)
+   - Compare baseline (Linear Regression) with Random Forest
+
+6. **Visualization**
+   - Heatmap of feature correlations
+   - Feature importance (Random Forest)
+   - Scatter plot of Actual vs Predicted values
+
+---
+
+## 📈 Results
 - **Linear Regression**
   - R² = 0.6411
   - RMSE = 0.1592 (~ \$15,900)
+
 - **Random Forest**
-  - R² = 0.8005
+  - R² = 0.8006
   - RMSE = 0.1187 (~ \$11,800)
 
-✅ Random Forest menunjukkan performa lebih baik dibanding Linear Regression, dengan akurasi lebih tinggi dan error lebih rendah.
+✅ The Random Forest model outperforms Linear Regression, achieving higher accuracy and lower error.
 
 ---
 
-## 📷 Visualisasi
-### Heatmap Korelasi
+## 📷 Visualizations
+### Correlation Heatmap
 ![heatmap](images/heatmap.png)
 
 ### Feature Importance (Random Forest)
@@ -63,11 +73,11 @@ Dataset yang digunakan adalah **California Housing Dataset** dari `scikit-learn`
 
 ---
 
-## ✨ Insight
-- **Median Income (MedInc)** adalah faktor paling dominan yang memengaruhi harga rumah.  
-- **Latitude & Longitude** juga sangat berpengaruh, menunjukkan lokasi geografis memainkan peran penting.  
-- Faktor usia rumah (HouseAge) berpengaruh sedang, sementara variabel lain seperti jumlah ruangan/penduduk relatif kurang signifikan.  
-- Model masih kesulitan memprediksi rumah dengan harga ekstrem (outlier).
+## ✨ Insights
+- **Median Income (MedInc)** is the most influential factor in determining house prices.  
+- **Latitude & Longitude** play a significant role, reflecting the importance of geographical location.  
+- **HouseAge** has a moderate impact, while features like `AveRooms`, `AveBedrms`, and `Population` contribute less.  
+- The model struggles slightly with extreme outliers but performs well overall.  
 
 ---
 
@@ -79,8 +89,8 @@ Dataset yang digunakan adalah **California Housing Dataset** dari `scikit-learn`
 
 ---
 
-## 🚀 Cara Menjalankan
-1. Clone repository ini:
+## 🚀 How to Run
+1. Clone the repository:
    ```bash
-   git clone https://github.com/username/california-housing-prediction.git
+   git clone https://github.com/Frazanhibriz/california-housing-prediction.git
    cd california-housing-prediction
